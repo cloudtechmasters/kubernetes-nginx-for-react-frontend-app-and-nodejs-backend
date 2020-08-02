@@ -14,6 +14,10 @@
 # Push node-app-one image to docker hub
     docker push cloudtechmasters/nodeapptwo:latest
     cd ..
+# Create kubernetes secret using below command
+    kubectl create secret tls node-app-tls \
+        --key private.key \
+        --cert certificate.crt
 # Deploy nodejs-application using following commands
     kubectl apply -f node-app-one/node-app-one-deployment.yaml
     kubectl apply -f node-app-one/node-app-one-service.yaml
