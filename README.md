@@ -23,4 +23,13 @@
      2. Create "CNAME" recordset for nodejs application host
      3. Create "CNAME" recordset for reactjs application host
      4. Create "A" recordset with nginx ingress controller loadbalancer
- # Check final output of application using with reactjs host
+# Check final output of application using with reactjs host
+# Note:
+    CNAME Recordset for nodejs application:
+    _3fa84ca6f5323cb2c6b7dbbe173bfe1a.node-app.vamsiawstraining.com
+    3B7D3848C010B73C39EBE63E3CC9D3AA.D622FB3BD161E2C643BD2175C1CCE582.99ca85cf8b1c4fb.comodoca.com
+    
+    CNAME Recordset for reactjs application:
+    _5bcd2eac046edd8fc79429925a753228.react.vamsiawstraining.com
+    813CAEDA749DCF20C461EF6EC52B2EB3.75A43E822ED481CD95B777310C3356D3.33aa0cd3bb5a03f.comodoca.com
+
