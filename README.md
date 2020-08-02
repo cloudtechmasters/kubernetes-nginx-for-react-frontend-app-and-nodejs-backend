@@ -24,6 +24,15 @@
      3. Create "CNAME" recordset for reactjs application host
      4. Create "A" recordset with nginx ingress controller loadbalancer
 # Check final output of application using with reactjs host
+
+# CleanUP
+    kubectl delete ingress node-app-ingress react-ingress
+    kubectl delete svc node-app-one-service node-app-two-service react-service
+    kubectl delete deploy  node-app-one-deployment node-app-two-deployment react-deployment
+    kubectl delete configmaps nginx-config
+    kubectl delete secrets node-app-tls react-tls
+    helm delete my-release
+    
 # Note:
     CNAME Recordset for nodejs application:
     _3fa84ca6f5323cb2c6b7dbbe173bfe1a.node-app.vamsiawstraining.com
