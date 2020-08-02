@@ -1,0 +1,30 @@
+---  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-deployment
+  labels:
+    app: react-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-deployment
+  template:
+    metadata:
+      labels:
+        app: react-deployment
+    spec:
+      containers:
+      - name: react-container
+        image: naresh240/reactapp:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/conf.d
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: nginx-config		  
+

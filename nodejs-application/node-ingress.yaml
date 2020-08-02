@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: node-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - node-app.vamsiawstraining.com
+    secretName: node-app-tls
+  rules:
+  - host: node-app.vamsiawstraining.com
+    http:
+      paths:
+      - path: /api1
+        backend:
+          serviceName: node-app-one-service
+          servicePort: 8080
+      - path: /api2
+        backend:
+          serviceName: node-app-two-service
+          servicePort: 3000
